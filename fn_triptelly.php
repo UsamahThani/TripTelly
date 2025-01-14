@@ -77,14 +77,11 @@ function getTotalCartPrice()
 }
 function googleApiKey()
 {
-    // return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
-    return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
-    // return 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
+    return 'get_your_own_google_api_key';
 }
 function fetchPlaceDetail($placeID)
 {
     // Your Google API Key
-    // $apiKey = 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
     $apiKey = googleApiKey();
 
     // Google Places Details API endpoint

@@ -44,7 +44,6 @@ $placeData = fetchPlaceDetail($placeID);
 
 $photos = $placeData['photos'];
 $reviews = $placeData['reviews'];
-// $apiKey = "AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ";
 $apiKey = googleApiKey();
 
 

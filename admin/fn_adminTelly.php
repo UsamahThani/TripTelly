@@ -284,8 +284,7 @@ function calcTripCountWithDest($destination)
 
 function googleApiKey()
 {
-    return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
-    // return 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
+    return 'get_your_own_api_key';
 }
 
 function fetchPlacesDataWithState($state, $placeType, $max_budget)
