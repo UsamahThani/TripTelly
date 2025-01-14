@@ -77,6 +77,7 @@ function getTotalCartPrice()
 }
 function googleApiKey()
 {
+    // return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
     return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
     // return 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
 }
@@ -84,7 +85,7 @@ function fetchPlaceDetail($placeID)
 {
     // Your Google API Key
     // $apiKey = 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
-    $apiKey = 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
+    $apiKey = googleApiKey();
 
     // Google Places Details API endpoint
     $url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" . urlencode($placeID) . "&key=" . $apiKey;
@@ -130,7 +131,7 @@ function fetchPlaceDetail($placeID)
     } else {
         // Log error for debugging
         if (isset($placeDetails['status'])) {
-            echo 'Error: ' . $placeDetails['status'];
+            echo 'Error fetchPlaceDetail: ' . $placeDetails['status'];
         }
         return null;
     }
