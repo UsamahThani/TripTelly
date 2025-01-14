@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 14, 2024 at 10:09 AM
+-- Generation Time: Jan 14, 2025 at 04:01 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -96,6 +96,19 @@ CREATE TABLE `cart_hotel` (
   `hotelLocation` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `hotelPrice` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_reset`
+--
+
+CREATE TABLE `password_reset` (
+  `id` int NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -237,12 +250,15 @@ INSERT INTO `user` (`userID`, `username`, `userFname`, `userEmail`, `userPasswor
 ('606a031bcf9b9189', 'zyfese', 'Kimberley David', 'qixyqa@mailinator.com', '$2y$10$p.pyV11u48Zo8Rb.7c6utOYibN./qLcDP0SErTImtCCfXGKaAX2Fq'),
 ('6083ef8352251f8e', 'gyzezox', 'Macaulay Richard', 'xuwilu@mailinator.com', '$2y$10$emBgYmeXrIf48WI8.GmtmunNYxbVpqcFJwjFqCK4aWIHJEm62Iffu'),
 ('632ba882362fd70a', 'vimep', 'Vance Lopez', 'wedip@mailinator.com', '$2y$10$whP2RfF/mzgmTVLdB9Hx6uwzykfnnnunwPnxydR3AT1fMY21kwby2'),
-('69e6a1311ecaca54', 'Usamah', 'Mohamad Usamah Thani Che Arif', 'mohamadusamahthani@gmail.com', '$2y$10$aeNKSm.bQF4rjQppUHGMW.BLqFGAHxhHCkMLspy4cIVcznYH0pE3O'),
+('69e6a1311ecaca54', 'Usamah', 'Mohamad Usamah Thani Che Arif', 'mohamadusamahthani@gmail.com', '$2y$10$GmJzTs.fVK94EKS8BfCifOX787DUMKvy0kykxrsqel7uNb.6FgSSu'),
 ('6c0f1834877c342c', 'bometewe', 'Caleb Rowland', 'bevowo@mailinator.com', '$2y$10$xzTY9zoBjr3SLlGcSyHZrOdEyoj9x5udtJMFJ8TX4sm0evpP5ulOi'),
 ('8c515ad5bc828c08', 'Sam', 'UsamahThani', 'usamah@gmail.com', '$2y$10$JJudpbh3gtNiL0tcBKI5D.HMzndUW1e7PltoK/J8vjB3.VfUlFfmS'),
 ('b419549b1ea2e9e0', 'vyqureqa', 'Camille Morgan', 'xycidaheh@mailinator.com', '$2y$10$xPkZMbUdHwetXD7rglJ8jOehbWdJGEDfr6sZV84.7LTQ0UaiErKue'),
 ('cf8170e907a85071', 'Erfa', 'Erfa Customer', 'erfa@gmail.com', '$2y$10$Hwx/7FnI/1V9/9ZFzLZdaO4aPaf7Ap8imjKiU5Lxdt/ybxYtDpDza'),
-('f103f3b68ee23036', 'qubovyr', 'Hector Ross', 'bevek@mailinator.com', '$2y$10$A5woI/fo6.ox61HWnTI2ru9O2hVhtDgy3sprO8sRJrqJdxD4Mo8JS');
+('d7718da3d2a8dd18', 'vywerenore', 'Anika Harmon', 'hofonuqaz@mailinator.com', '$2y$10$H8nMS1uKGiRiZit7WtzWXOza9N/xDpYdwtaDqYOZ0OrPV16OFT90a'),
+('db786e6917cda17c', 'Mah', 'Samah', 'vulpinefgo@gmail.com', '$2y$10$GLwqbvdq.BwjJbVobgsOE.O3FwcQB4rd5z4l5zZkzv0KOtGWbpyzS'),
+('f103f3b68ee23036', 'qubovyr', 'Hector Ross', 'bevek@mailinator.com', '$2y$10$A5woI/fo6.ox61HWnTI2ru9O2hVhtDgy3sprO8sRJrqJdxD4Mo8JS'),
+('f45db1fffc728f51', 'gyfese', 'Channing Mcgowan', 'xeqeqi@mailinator.com', '$2y$10$qHylofeoAtQqDYxBVbPLMeTQpXoMNdeIzmPpY5R35cAzSUUUNuDPe');
 
 -- --------------------------------------------------------
 
@@ -275,7 +291,91 @@ INSERT INTO `user_engagement` (`id`, `event_type`, `userId`, `event_time`) VALUE
 (11, 'login', '69e6a1311ecaca54', NULL),
 (12, 'visit', NULL, NULL),
 (13, 'visit', NULL, NULL),
-(14, 'visit', NULL, NULL);
+(14, 'visit', NULL, NULL),
+(15, 'visit', NULL, NULL),
+(16, 'login', '69e6a1311ecaca54', NULL),
+(17, 'login', '69e6a1311ecaca54', NULL),
+(18, 'login', '69e6a1311ecaca54', NULL),
+(19, 'visit', NULL, NULL),
+(20, 'login', '69e6a1311ecaca54', NULL),
+(21, 'login', '69e6a1311ecaca54', NULL),
+(22, 'visit', NULL, NULL),
+(23, 'login', '69e6a1311ecaca54', NULL),
+(24, 'visit', NULL, NULL),
+(25, 'login', '69e6a1311ecaca54', NULL),
+(26, 'visit', NULL, NULL),
+(27, 'visit', NULL, NULL),
+(28, 'login', '69e6a1311ecaca54', NULL),
+(29, 'visit', NULL, NULL),
+(30, 'visit', NULL, NULL),
+(31, 'visit', NULL, NULL),
+(32, 'visit', NULL, NULL),
+(33, 'visit', NULL, NULL),
+(34, 'login', '69e6a1311ecaca54', NULL),
+(35, 'visit', NULL, NULL),
+(36, 'visit', NULL, NULL),
+(37, 'login', '69e6a1311ecaca54', NULL),
+(38, 'visit', NULL, NULL),
+(39, 'login', '69e6a1311ecaca54', NULL),
+(40, 'visit', NULL, NULL),
+(41, 'login', 'db786e6917cda17c', NULL),
+(42, 'visit', NULL, NULL),
+(43, 'login', 'db786e6917cda17c', NULL),
+(44, 'login', 'db786e6917cda17c', NULL),
+(45, 'login', 'db786e6917cda17c', NULL),
+(46, 'login', 'db786e6917cda17c', NULL),
+(47, 'login', 'db786e6917cda17c', NULL),
+(48, 'login', 'db786e6917cda17c', NULL),
+(49, 'login', 'db786e6917cda17c', NULL),
+(50, 'login', 'db786e6917cda17c', NULL),
+(51, 'login', 'db786e6917cda17c', NULL),
+(52, 'login', 'db786e6917cda17c', NULL),
+(53, 'login', 'db786e6917cda17c', NULL),
+(54, 'login', 'db786e6917cda17c', NULL),
+(55, 'login', 'db786e6917cda17c', NULL),
+(56, 'login', 'db786e6917cda17c', NULL),
+(57, 'login', 'db786e6917cda17c', NULL),
+(58, 'login', 'db786e6917cda17c', NULL),
+(59, 'login', 'db786e6917cda17c', NULL),
+(60, 'login', 'db786e6917cda17c', NULL),
+(61, 'login', 'db786e6917cda17c', NULL),
+(62, 'login', 'db786e6917cda17c', NULL),
+(63, 'login', 'db786e6917cda17c', NULL),
+(64, 'login', 'db786e6917cda17c', NULL),
+(65, 'login', 'db786e6917cda17c', NULL),
+(66, 'login', 'db786e6917cda17c', NULL),
+(67, 'login', 'db786e6917cda17c', NULL),
+(68, 'login', 'db786e6917cda17c', NULL),
+(69, 'login', 'db786e6917cda17c', NULL),
+(70, 'visit', NULL, NULL),
+(71, 'visit', NULL, NULL),
+(72, 'login', '69e6a1311ecaca54', NULL),
+(73, 'login', '69e6a1311ecaca54', NULL),
+(74, 'login', '69e6a1311ecaca54', NULL),
+(75, 'login', '69e6a1311ecaca54', NULL),
+(76, 'login', '69e6a1311ecaca54', NULL),
+(77, 'visit', NULL, NULL),
+(78, 'login', '69e6a1311ecaca54', NULL),
+(79, 'login', '69e6a1311ecaca54', NULL),
+(80, 'visit', NULL, NULL),
+(81, 'visit', NULL, NULL),
+(82, 'login', '69e6a1311ecaca54', NULL),
+(83, 'login', '69e6a1311ecaca54', NULL),
+(84, 'login', '69e6a1311ecaca54', NULL),
+(85, 'login', '69e6a1311ecaca54', NULL),
+(86, 'login', '69e6a1311ecaca54', NULL),
+(87, 'login', '69e6a1311ecaca54', NULL),
+(88, 'visit', NULL, NULL),
+(89, 'login', '69e6a1311ecaca54', NULL),
+(90, 'visit', NULL, NULL),
+(91, 'visit', NULL, NULL),
+(92, 'login', '69e6a1311ecaca54', NULL),
+(93, 'login', '69e6a1311ecaca54', NULL),
+(94, 'login', '69e6a1311ecaca54', NULL),
+(95, 'visit', NULL, NULL),
+(96, 'login', '69e6a1311ecaca54', NULL),
+(97, 'login', '69e6a1311ecaca54', NULL),
+(98, 'login', '69e6a1311ecaca54', NULL);
 
 --
 -- Indexes for dumped tables
@@ -309,6 +409,12 @@ ALTER TABLE `cart_hotel`
   ADD KEY `cartID` (`cartID`);
 
 --
+-- Indexes for table `password_reset`
+--
+ALTER TABLE `password_reset`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
@@ -334,3 +440,58 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `userEmail` (`userEmail`);
 
 --
+-- Indexes for table `user_engagement`
+--
+ALTER TABLE `user_engagement`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart_attractions`
+--
+ALTER TABLE `cart_attractions`
+  MODIFY `cartAttID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `cart_hotel`
+--
+ALTER TABLE `cart_hotel`
+  MODIFY `cartHotelID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `password_reset`
+--
+ALTER TABLE `password_reset`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `paymentID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `reviewID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `review_delete`
+--
+ALTER TABLE `review_delete`
+  MODIFY `deleteID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT for table `user_engagement`
+--
+ALTER TABLE `user_engagement`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

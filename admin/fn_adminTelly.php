@@ -93,7 +93,8 @@ function fetchAllCustomerData()
 }
 
 
-function countTotalSaleOfWeek() {
+function countTotalSaleOfWeek()
+{
     global $conn;
 
     // SQL query to calculate the total sales from the past 7 days
@@ -116,7 +117,8 @@ function countTotalSaleOfWeek() {
     }
 }
 
-function fetchMostPopularLocation() {
+function fetchMostPopularLocation()
+{
     global $conn;
 
     // SQL query to find the most picked destinationLocation
@@ -142,7 +144,8 @@ function fetchMostPopularLocation() {
 }
 
 
-function countTotalVisitor() {
+function countTotalVisitor()
+{
     global $conn;
 
     // SQL query to count all rows in the user_engagement table
@@ -162,7 +165,8 @@ function countTotalVisitor() {
 }
 
 
-function countTotalBooked() {
+function countTotalBooked()
+{
     global $conn;
 
     // SQL query to count all rows in the payment table
@@ -181,7 +185,8 @@ function countTotalBooked() {
     }
 }
 
-function fetchCartAndBook() {
+function fetchCartAndBook()
+{
     global $conn;
 
     // SQL query to combine cart and payment data
@@ -230,7 +235,8 @@ function fetchCartAndBook() {
     return $data;
 }
 
-function placeNameAndValue() {
+function placeNameAndValue()
+{
     return [
         ['value' => 'johor', 'name' => 'Johor'],
         ['value' => 'kedah', 'name' => 'Kedah'],
@@ -248,7 +254,8 @@ function placeNameAndValue() {
     ];
 }
 
-function calcTotalPriceWithDest($destination) {
+function calcTotalPriceWithDest($destination)
+{
     global $conn;
 
     $totalPriceSQL = "SELECT SUM(totalPrice) as total FROM payment WHERE destinationLocation = ?";
@@ -261,7 +268,8 @@ function calcTotalPriceWithDest($destination) {
     return $row['total'] ?? 0;
 }
 
-function calcTripCountWithDest($destination) {
+function calcTripCountWithDest($destination)
+{
     global $conn;
 
     $tripSQL = "SELECT COUNT(*) AS trip FROM payment WHERE destinationLocation = ?";
@@ -274,12 +282,14 @@ function calcTripCountWithDest($destination) {
     return $row['trip'] ?? 0;
 }
 
-function googleApiKey() {
+function googleApiKey()
+{
     return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
-    // return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
+    // return 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
 }
 
-function fetchPlacesDataWithState($state, $placeType, $max_budget) {
+function fetchPlacesDataWithState($state, $placeType, $max_budget)
+{
     $apiKey = googleApiKey();
 
     // Step 1: Convert state to latitude and longitude using Geocoding API
@@ -374,19 +384,21 @@ function generateAttractionPrice($maxAttractionBudget)
     return rand(3, min(100, $attraction_budget));
 }
 
-function countReview($placeId) {
+function countReview($placeId)
+{
     global $conn;
 
     $sql = 'SELECT COUNT(*) AS reviewCount FROM review WHERE placeID = ?';
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('s', $placeId) ;
-    $stmt->execute() ;
+    $stmt->bind_param('s', $placeId);
+    $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
     return $row['reviewCount'];
 }
 
-function fetchPlacesDataWithID ($placeID) {
+function fetchPlacesDataWithID($placeID)
+{
     $apiKey = googleApiKey();
 
     // Google Places Details API endpoint
@@ -453,7 +465,8 @@ function fetchPlacesDataWithID ($placeID) {
     }
 }
 
-function fetchCustomerData($userID) {
+function fetchCustomerData($userID)
+{
     global $conn;
 
     $userSQL = "SELECT * FROM user WHERE userID = ?";
@@ -519,14 +532,15 @@ function fetchLocalReviews($placeID)
     return $reviews;
 }
 
-function fetchDeletedReviews($reviewURL) {
+function fetchDeletedReviews($reviewURL)
+{
     global $conn;
     $sql = 'SELECT * FROM review_delete WHERE reviewURL = ?';
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $reviewURL);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
     if ($result->num_rows > 0) {
         // Fetch associative array
         $deletedReview = $result->fetch_assoc();

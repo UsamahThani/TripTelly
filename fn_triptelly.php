@@ -75,11 +75,16 @@ function getTotalCartPrice()
 
     return $totalPrice;
 }
-
+function googleApiKey()
+{
+    return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
+    // return 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
+}
 function fetchPlaceDetail($placeID)
 {
     // Your Google API Key
-    $apiKey = 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
+    // $apiKey = 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
+    $apiKey = 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
 
     // Google Places Details API endpoint
     $url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" . urlencode($placeID) . "&key=" . $apiKey;
@@ -169,7 +174,8 @@ function fetchLocalReviews($placeID)
 }
 
 
-function fetchUserData($userID) {
+function fetchUserData($userID)
+{
     global $conn;
 
     $userSQL = "SELECT * FROM user WHERE userID = ?";
@@ -203,7 +209,8 @@ function fetchUserData($userID) {
     }
 }
 
-function fetchTripData($userID) {
+function fetchTripData($userID)
+{
     global $conn;
 
     $userSQL = "SELECT * FROM payment WHERE userID = ?";
@@ -239,7 +246,8 @@ function fetchTripData($userID) {
     }
 }
 
-function fetchTripDataArrayPlace($paymentID) {
+function fetchTripDataArrayPlace($paymentID)
+{
     global $conn;
 
     $userSQL = "SELECT placeData, hotelData FROM payment WHERE paymentID = ?";
@@ -273,7 +281,8 @@ function fetchTripDataArrayPlace($paymentID) {
     return [];
 }
 
-function fetchTripDataWithPaymentID ($paymentID) {
+function fetchTripDataWithPaymentID($paymentID)
+{
     global $conn;
 
     $userSQL = "SELECT * FROM payment WHERE paymentID = ?";

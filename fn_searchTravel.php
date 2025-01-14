@@ -109,7 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || isset($_SESSION['form_data'])) {
     }
     $_SESSION['form_data'] = $_POST;
     // Google Places API key
-    $apiKey = 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
+    // $apiKey = 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
+    $apiKey = googleApiKey();
 
     // Step 1: Convert destination location to latitude and longitude using Geocoding API
     $geocodeUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" . urlencode($destination_loc) . "&key=$apiKey";
@@ -213,7 +214,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || isset($_SESSION['form_data'])) {
 
                 shuffle($attractions); // Randomize attractions order
                 $_SESSION['attraction_data'] = $attractions;
-
             } else {
                 $_SESSION['errorMsg'] = "No tourist attractions found near the specified location.";
                 header("Location: searchForm.php");
