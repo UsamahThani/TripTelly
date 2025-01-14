@@ -116,8 +116,7 @@ $placeData = fetchPlaceDetail($placeID);
 
 $photos = $placeData['photos'];
 $reviews = $placeData['reviews'];
-// $apiKey = "AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ";
-$apiKey = googleApiKey();
+$apiKey = "AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ";
 
 $firstPhoto = "";
 $otherPhoto = [];
@@ -499,6 +498,17 @@ foreach ($photos as $photo) {
 			script.defer = true;
 			document.body.appendChild(script);
 		});
+		document.addEventListener("DOMContentLoaded", function () {
+    const mainImg = document.getElementById("primary-img");
+    const subImgs = document.querySelectorAll(".sub-img img");
+
+    subImgs.forEach((img) => {
+        img.addEventListener("mouseenter", function () {
+            const newSrc = img.getAttribute("src");
+            mainImg.setAttribute("src", newSrc);
+        });
+    });
+});
 
 	</script>
 

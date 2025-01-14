@@ -10,7 +10,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #4070f4;
+	background: #fff;
 }
 .wrapper {
 	position: relative;
@@ -23,6 +23,7 @@ body {
 }
 .wrapper h2 {
 	position: relative;
+	font-family: "Poppins", sans-serif; /* Change font */
 	font-size: 22px;
 	font-weight: 600;
 	color: #333;
@@ -35,7 +36,7 @@ body {
 	height: 3px;
 	width: 28px;
 	border-radius: 12px;
-	background: #4070f4;
+	background: #00d8ff;
 }
 .wrapper form {
 	margin-top: 30px;
@@ -49,7 +50,8 @@ form .input-box input {
 	width: 100%;
 	outline: none;
 	padding: 0 15px;
-	font-size: 17px;
+	font-family: "Poppins", sans-serif; /* Change font */
+	font-size: 14px;
 	font-weight: 400;
 	color: #333;
 	border: 1.5px solid #c7bebe;
@@ -59,7 +61,7 @@ form .input-box input {
 }
 .input-box input:focus,
 .input-box input:valid {
-	border-color: #4070f4;
+	border-color: #00d8ff;
 }
 form .policy {
 	display: flex;
@@ -67,6 +69,7 @@ form .policy {
 }
 form h3 {
 	color: #707070;
+	font-family: "Poppins", sans-serif; /* Change font */
 	font-size: 14px;
 	font-weight: 500;
 	margin-left: 10px;
@@ -75,11 +78,11 @@ form h3 {
 	color: #fff;
 	letter-spacing: 1px;
 	border: none;
-	background: #4070f4;
+	background: #83e5f6;
 	cursor: pointer;
 }
 .input-box.button input:hover {
-	background: #0e4bf1;
+	background: #00d8ff;
 }
 form .text h3 {
 	color: #333;
@@ -87,7 +90,7 @@ form .text h3 {
 	text-align: center;
 }
 form .text h3 a {
-	color: #4070f4;
+	color: #00d8ff;
 	text-decoration: none;
 }
 form .text h3 a:hover {

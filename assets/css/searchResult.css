@@ -99,18 +99,24 @@ a {
 .price-display {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 20px;
 	pointer-events: auto;
-	background: #f8fbfe;
+	background: #fff;;
 	width: auto;
-<<<<<<< HEAD
-	margin-top: 300px;
-=======
 	margin-top: 400px;
->>>>>>> 087968e3d1920f13c70088aadc600344849eabb8
-	margin-right: 20px;
-	padding: 10px;
-	border-radius: 8px;
+	margin-right:px;
+	padding: 5px 10px; /* Smaller padding for a compact design */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 10px; /* Smaller font size for text */
+    font-weight: bold; /* Bold text to maintain clarity */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Center align text */
+    width: auto; /* Adjust size dynamically based on content */
+    line-height: 1.2; /* Slightly tighter line spacing */
+    cursor: pointer; /* Add cursor pointer for interaction */
+    transition: all 0.3s ease; /* Smooth hover transition */
+	
 }
 
 .current-display,
@@ -128,17 +134,157 @@ a {
 .over-budget {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 20px;
 	pointer-events: auto;
-	background: #232323;
+	background: #fff;;
 	width: auto;
 	margin-top: 400px;
-	margin-right: 20px;
-	padding: 10px;
-	border-radius: 8px;
-	color: #dc3545;
+	margin-right:px;
+	padding: 5px 10px; /* Smaller padding for a compact design */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 10px; /* Smaller font size for text */
+    font-weight: bold; /* Bold text to maintain clarity */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Center align text */
+    width: auto; /* Adjust size dynamically based on content */
+    line-height: 1.2; /* Slightly tighter line spacing */
+    cursor: pointer; /* Add cursor pointer for interaction */
+    transition: all 0.3s ease; /* Smooth hover transition */
 }
 
 .card-text {
 	font-size: 12px;
 }
+
+/* Add border and box-shadow to the card */
+.card {
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #ffffff; /* White background */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    overflow: hidden; /* Ensure content does not overflow rounded corners */
+}
+
+/* Make the card pop slightly when hovered */
+.card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow intensity */
+    border-color: #b3b3b3; /* Slightly darker grey border on hover */
+}
+.card-body {
+    padding: 15px; /* Space inside the card body */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spread content evenly */
+}
+
+/* Titles inside the card */
+.card-body .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333; /* Dark grey text */
+    margin-bottom: 10px;
+}
+
+/* Descriptions inside the card */
+.card-body .card-text {
+    font-size: 14px;
+    color: #666; /* Medium grey text */
+    margin-bottom: 10px;
+}
+
+/* Price and rating section inside the card */
+.price-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #555; /* Darker grey */
+}
+/* Style for the title section */
+.title {
+    text-align: center; /* Centers the text */
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+/* Style for the main title (e.g., HOTELS IN KUALA LUMPUR) */
+.title h3 {
+    font-size: 32px; /* Adjust size of the main title */
+    font-weight: 600; /* Make it bold */
+    color: #333; /* Set color */
+    text-transform: uppercase; /* Ensure all text is in uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+/* Style for the subtitle (e.g., Select accommodations) */
+.title h5 {
+    font-size: 18px; /* Adjust size of the subtitle */
+    font-weight: 400; /* Make it lighter than the title */
+    color: #555; /* Set a subtle color for the subtitle */
+    letter-spacing: 1px; /* Add slight spacing between letters */
+    margin-top: 0; /* Ensure no extra margin at the top */
+}
+/* Sticky Container for Price Display */
+.sticky-container {
+    position: sticky; /* Kekalkan di skrin semasa scroll */
+    top: 20px; /* Jarak dari bahagian atas */
+    z-index: 1000; /* Pastikan ia di atas elemen lain */
+    display: flex; /* Untuk alignment */
+    justify-content: flex-start; /* Letakkan di kiri */
+    width: 100%; /* Panjang penuh */
+    pointer-events: none; /* Tidak mengganggu interaksi dengan kandungan lain */
+}
+
+/* Base Style for Price Display Box */
+.price-box {
+    pointer-events: auto; /* Boleh diklik */
+    margin-left: 20px; /* Jarak dari tepi kiri */
+    padding: 15px 20px; /* Ruang dalam kotak */
+    border-radius: 12px; /* Sudut bulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayang untuk kedalaman */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi hover **/
+}
+
+/* Different Colors for Price Display */
+.price-display {
+    background: white; /* White background */
+    color: rgb(8, 8, 8); /* Black text */
+    border: 1px solid #ccc; /* Light grey border for a subtle effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 12px; /* Smooth rounded corners */
+}
+.over-budget {
+    background: #de1903; /* Gradient untuk melebihi bajet */
+    color: rgb(238, 236, 236); /* Black text */
+}
+
+/* Inner Content Styling */
+.current-display,
+.budget-display {
+    display: flex; /* Flex container for alignment */
+    justify-content: space-between; /* Space between labels and values */
+    align-items: center; /* Center vertically */
+    font-size: 16px; /* Larger text size */
+    font-weight: bold;
+    margin: 5px 0; /* Adds spacing between rows */
+}
+
+
+
+
+/* Hover Effect for Both Boxes */
+.price-box:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+

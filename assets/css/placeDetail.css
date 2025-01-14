@@ -1,18 +1,55 @@
-.detail-content {
-	background-color: #c3c3c3;
-	border-radius: 14px;
-	padding: 50px;
-	width: 100%;
-	align-items: center;
+body {
+	background-color: #f5f5f5; /* Light grey background for minimalism */
+	color: #333; /* Dark grey for readable text */
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
 }
+
+a {
+	text-decoration: none;
+	color: #007bff; /* Subtle blue for links */
+}
+
+a:hover {
+	color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Detail Content */
+.detail-content {
+	background-color: #ffffff; /* Clean white background for sections */
+	border-radius: 12px;
+	padding: 40px;
+	width: 100%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	margin-bottom: 20px;
+}
+
+.detail-title {
+    text-align: center; /* Center-align the title */
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+.detail-title h3 {
+    font-size: 32px; /* Adjust size of the main title */
+    font-weight: 700; /* Make it bold */
+    color: #333; /* Darker grey color */
+    text-transform: uppercase; /* Convert to uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    margin-bottom: 10px; /* Space below the main title */
+    font-family: 'Poppins', sans-serif; /* Ensure consistency in font */
+}
+
 
 .place-data {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-start;
+	gap: 20px; /* Add space between image and info */
 }
 
-/* img part */
+/* Image Section */
 .img-container {
 	width: 40%;
 }
@@ -21,154 +58,180 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	border-radius: 8px; /* Rounded edges for the main image */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	overflow: hidden; /* Prevent overflow issues */
 }
 
 .main-img img {
-	width: 500px;
-	height: 500px;
-	object-fit: cover;
-	object-position: center;
-}
-
-.sub-img {
-	display: flex;
-	justify-content: center;
+    width: 100%;
+    height: 400px; /* Fixed height for consistent display */
+    object-fit: cover;
+    object-position: center;
+    transition: none;
+    transform: none !important;
 }
 
 .sub-img img {
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
-	object-position: center;
-	margin: 10px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
 }
 
+.sub-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Information Section */
 .info-container {
-	width: 100%;
+	width: 55%;
 }
 
-iframe {
-	height: 50%;
+table {
 	width: 100%;
-	border: #000000 1px solid;
-	border-radius: 14px;
+	border-collapse: collapse;
+	margin-top: 10px;
+	background-color: #ffffff; /* Clean white background */
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+	overflow: hidden;
 }
 
-#street-view {
-	border-radius: 14px;
+table th {
+	background-color: #f9f9f9; /* Very light grey for the header */
+	color: #333; /* Dark text for contrast */
+	font-weight: bold;
+	text-align: left;
+	padding: 12px;
+	border-bottom: 1px solid #e6e6e6; /* Subtle border for rows */
+}
+
+table td {
+	padding: 12px;
+	color: #555; /* Medium grey for cell text */
+	border-bottom: 1px solid #e6e6e6; /* Subtle border for rows */
+}
+
+table tr:hover {
+	background-color: #f1f1f1; /* Light grey hover effect */
+}
+
+/* Reviews Section */
+.review-container h4 {
+	font-size: 24px; /* Larger font for section title */
+	font-weight: bold;
+	color: #333; /* Darker grey */
+	margin-bottom: 20px; /* Space below the title */
+	text-align: center;
 }
 
 .review-card {
-	border: 0;
-	border-radius: 14px;
-	background-color: #76767659;
+	background-color: #ffffff; /* Clean white for review cards */
+	border: 1px solid #ddd; /* Light border */
+	border-radius: 8px;
+	padding: 20px;
+	margin-bottom: 15px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.user-icon {
-	margin-right: 5px;
+.review-card:hover {
+	transform: scale(1.02); /* Slight enlargement */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
 }
 
-.review-form {
-	width: 100%;
+.review-card .card-title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 8px;
+	display: flex;
+	align-items: center; /* Align user icon with text */
 }
 
-.review-text {
-	width: 100%;
-	min-height: 15vh;
-	border-radius: 14px;
-	padding: 10px;
-	line-height: normal;
-	padding-top: 10px;
-	box-sizing: border-box;
+.review-card .user-icon {
+	margin-right: 10px;
+	color: #00d8ff; /* Highlight color for icon */
+	font-size: 24px; /* Larger icon size */
 }
 
-/* From Uiverse.io by adamgiebl */
+.review-card .card-text {
+	font-size: 14px;
+	color: #555; /* Medium grey for review text */
+	line-height: 1.5;
+	margin-bottom: 8px;
+}
+
+.review-card .text-muted {
+	font-size: 12px;
+	color: #999; /* Muted grey for additional info */
+}
+
+/* Rating Stars */
+.rating:not(:checked) > input {
+	position: absolute;
+	appearance: none;
+}
+
+.rating:not(:checked) > label {
+	float: right;
+	cursor: pointer;
+	font-size: 25px;
+	fill: #bbb; /* Light grey for unselected stars */
+	transition: fill 0.3s ease;
+}
+
+.rating > input:checked ~ label > svg {
+	fill: #ffa723; /* Bright orange for selected stars */
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+	fill: #ff9e0b; /* Lighter orange for hover effect */
+}
+
+/* Buttons */
 .ui-btn {
 	font-family: inherit;
-	font-size: 20px;
-	background: royalblue;
+	font-size: 16px;
+	background: #007bff; /* Blue button */
 	color: white;
-	padding: 0.7em 1em;
-	padding-left: 0.9em;
-	display: flex;
-	align-items: center;
+	padding: 0.5em 1em;
 	border: none;
-	border-radius: 16px;
-	overflow: hidden;
-	transition: all 0.2s;
+	border-radius: 8px;
 	cursor: pointer;
+	transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.ui-btn span {
-	display: block;
-	margin-left: 0.3em;
-	transition: all 0.3s ease-in-out;
-}
-
-.ui-btn svg {
-	display: block;
-	transform-origin: center center;
-	transition: transform 0.3s ease-in-out;
-}
-
-.ui-btn:hover .svg-wrapper {
-	animation: fly-1 0.6s ease-in-out infinite alternate;
-}
-
-.ui-btn:hover svg {
-	transform: translateX(1.2em) rotate(45deg) scale(1.1);
-}
-
-.ui-btn:hover span {
-	transform: translateX(5em);
+.ui-btn:hover {
+	background: #0056b3; /* Darker blue on hover */
+	transform: scale(1.05); /* Slight enlargement on hover */
 }
 
 .ui-btn:active {
-	transform: scale(0.95);
+	transform: scale(0.95); /* Slight shrinkage on click */
 }
 
-@keyframes fly-1 {
-	from {
-		transform: translateY(0.1em);
-	}
-
-	to {
-		transform: translateY(-0.1em);
-	}
+iframe {
+	height: 350px;
+	width: 100%;
+	border: 0;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
 }
 
-/* From Uiverse.io by amikambs */ 
-.rating:not(:checked) > input {
-    position: absolute;
-    appearance: none;
-  }
-  
-  .rating:not(:checked) > label {
-    float: right;
-    cursor: pointer;
-    font-size: 30px;
-    fill: #666;
-  }
-  
-  .rating:not(:checked) > label > svg {
-    fill: #666; /* Set default color for SVG */
-    transition: fill 0.3s ease; /* Add a transition effect */
-  }
-  
-  .rating > input:checked + label:hover,
-  .rating > input:checked + label:hover ~ label,
-  .rating > input:checked ~ label:hover,
-  .rating > input:checked ~ label:hover ~ label,
-  .rating > label:hover ~ input:checked ~ label {
-    fill: #e58e09;
-  }
-  
-  .rating:not(:checked) > label:hover,
-  .rating:not(:checked) > label:hover ~ label {
-    fill: #ff9e0b;
-  }
-  
-  .rating > input:checked ~ label > svg {
-    fill: #ffa723; /* Set color for selected stars */
-  }
-  
+/* Street View */
+#street-view {
+	height: 350px;
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
+}

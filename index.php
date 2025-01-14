@@ -20,8 +20,6 @@ $stmt->bind_param("ss", $eventType, $_SESSION['userID']);
 $stmt->execute();
 
 // date for date picker
-$todayDate = date("d/m/Y");
-$returnDate = date("m/d/Y", strtotime("+5 days"));
 $today = date("Y-m-d");
 
 $apiUrl = 'https://newsapi.org/v2/everything?apiKey=c1440b57c68c4a419497642de1a65677&q="travel"+AND+vacation+OR+Budget+travel+tips&pageSize=7';
@@ -148,6 +146,8 @@ unset($_SESSION['form_data']);
 
 
 	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+	
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -361,11 +361,9 @@ unset($_SESSION['form_data']);
 													<div class="single-tab-select-box">
 														<h2>Departure</h2>
 														<div class="travel-check-icon">
-															<input type="text" name="departure_date"
-																class="form-control" data-toggle="datepicker"
-																min="<?php echo $today; ?>"
-																placeholder="<?php echo $todayDate ?>"
-																autocomplete="off" required>
+														<input type="date" name="departure_date" id="departureDate"
+   														 class="form-control" min="<?php echo $today; ?>"
+   														 placeholder="Select Departure Date" required>
 														</div><!-- /.travel-check-icon -->
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
@@ -374,10 +372,9 @@ unset($_SESSION['form_data']);
 													<div class="single-tab-select-box">
 														<h2>Return</h2>
 														<div class="travel-check-icon">
-															<input type="text" name="return_date" class="form-control"
-																data-toggle="datepicker" min="<?php echo $today; ?>"
-																placeholder="<?php echo $returnDate ?>"
-																autocomplete="off" required>
+														<input type="date" name="return_date" id="returnDate"
+    													class="form-control" min="<?php echo $today; ?>"
+   								                        placeholder="Select Return Date" required>
 														</div><!-- /.travel-check-icon -->
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
@@ -819,6 +816,15 @@ unset($_SESSION['form_data']);
 			}
 		});
 	</script>
+	<script>
+    // Update min tarikh return_date berdasarkan departure_date
+    document.getElementById('departureDate').addEventListener('change', function () {
+        const departureDate = this.value; // Tarikh bertolak yang dipilih
+        const returnDateInput = document.getElementById('returnDate');
+        returnDateInput.min = departureDate; // Tetapkan minimum tarikh pulang
+    });
+</script>
+
 
 
 </body>

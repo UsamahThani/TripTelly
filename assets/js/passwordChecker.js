@@ -6,13 +6,13 @@ function checkPasswordStrength(passwordInputId) {
 
     passwordInput.addEventListener('input', function () {
         const password = passwordInput.value;
-        const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{6,}$/;
+        const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
         if (password.length === 0) {
             feedbackElement.textContent = '';
             // submitBtn.disabled = true; // Disable submit when input is empty
         } else if (!regex.test(password)) {
-            feedbackElement.textContent = 'Password must be at least 6 characters long and include alphabets, numbers, and symbols.';
+            feedbackElement.textContent = 'Password must be at least 8 characters long and include alphabets, numbers, and symbols.';
             feedbackElement.style.color = '#ff0000'; // Ensure red color on invalid input
             submitBtn.disabled = true;
             return false;
