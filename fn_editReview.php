@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Prepare the statement
     if ($stmt = mysqli_prepare($conn, $sql)) {
         // Bind parameters to the statement
-        mysqli_stmt_bind_param($stmt, 'ssii', $reviewText, $rating, $reviewID, $userID);
+        mysqli_stmt_bind_param($stmt, 'siss', $reviewText, $rating, $reviewID, $userID);
 
         // Execute the statement
         if (mysqli_stmt_execute($stmt)) {

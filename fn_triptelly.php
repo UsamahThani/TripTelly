@@ -77,7 +77,7 @@ function getTotalCartPrice()
 }
 function googleApiKey()
 {
-    return 'get_your_own_google_api_key';
+    return 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
 }
 function fetchPlaceDetail($placeID)
 {
