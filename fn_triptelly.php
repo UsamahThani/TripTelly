@@ -84,7 +84,7 @@ function fetchPlaceDetail($placeID)
 {
     // Your Google API Key
     // $apiKey = 'AIzaSyBpHdMS0pMIrrjewOeEpo5z-ykG0FMYbiQ';
-    $apiKey = 'AIzaSyC5xTjQIo0rVc-lj1ZUG2p9xIfMPPkE72k';
+    $apiKey = googleApiKey();
 
     // Google Places Details API endpoint
     $url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" . urlencode($placeID) . "&key=" . $apiKey;

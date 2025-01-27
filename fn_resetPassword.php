@@ -40,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         // need new gmail here and genereate app password
-        $mail->Username = 'gmail address';
-        $mail->Password = 'app_password';
+        $mail->Username = 'erfatriptelly@gmail.com';
+        $mail->Password = 'xaxg dbfx xjjc mlbm';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
