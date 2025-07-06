@@ -1,7 +1,7 @@
 # TripTelly 🗺️
 
 A travel and trip planning platform for organizing, visualizing, and sharing journeys.  
-**Repository:** [`@UsamahThani/TripTelly`](https://github.com/UsamahThani/TripTelly)
+**Repository:** [`@Usamah/TripTelly`](https://github.com/UsamahThani/TripTelly)
 
 ---
 
